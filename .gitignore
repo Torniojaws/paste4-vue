@@ -7,7 +7,6 @@ logs
 coverage
 
 # Dependency directories
-build/
 dist/
 node_modules/
 
