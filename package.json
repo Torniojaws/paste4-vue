@@ -1,0 +1,39 @@
+{
+  "name": "paste4-vue",
+  "version": "0.0.1",
+  "description": "Vue frontend for Paste 4.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config build/webpack.config.dev.js",
+    "dev": "webpack-dev-server --config build/webpack.config.dev.js",
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Torniojaws/paste4-vue.git"
+  },
+  "keywords": [
+    "vue",
+    "paste",
+    "frontend"
+  ],
+  "author": "Juha Untinen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Torniojaws/paste4-vue/issues"
+  },
+  "homepage": "https://github.com/Torniojaws/paste4-vue#readme",
+  "devDependencies": {
+    "css-loader": "^1.0.0",
+    "vue-loader": "^15.2.4",
+    "vue-style-loader": "^4.1.0",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1"
+  }
+}
