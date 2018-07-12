@@ -1,16 +1,20 @@
 <template>
   <div id="app">
-    <p>Hello {{ who }}</p>
+    <router-link to="/hello">Hello</router-link>
+    <router-link to="/about">About</router-link>
+    <router-view/>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'app',
-    data() {
-      return {
-        who: 'world'
-      }
-    }
-  }
+export default {
+  name: 'App'
+}
 </script>
+
+<style>
+#app {
+  font-family: Helvetica, sans-serif;
+  color: black;
+}
+</style>

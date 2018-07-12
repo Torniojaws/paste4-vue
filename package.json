@@ -4,8 +4,8 @@
   "description": "Vue frontend for Paste 4.0",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack/prod.config.js",
-    "start": "webpack-dev-server --config webpack/dev.config.js --open",
+    "build": "NODE_ENV=production webpack --config config/index.js",
+    "start": "NODE_ENV=development webpack-dev-server --config config/index.js --open",
     "test": "test"
   },
   "repository": {
@@ -25,6 +25,9 @@
   "homepage": "https://github.com/Torniojaws/paste4-vue#readme",
   "devDependencies": {
     "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.3",
     "vue-loader": "^15.2.4",
     "vue-style-loader": "^4.1.0",
     "vue-template-compiler": "^2.5.16",
