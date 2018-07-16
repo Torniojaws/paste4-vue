@@ -2,6 +2,7 @@
   <div id="hello">
     <h1>Hello</h1>
     <p>Hi there. {{ msg }}</p>
+    <b-alert show dismissible>Bootstrappi</b-alert>
   </div>
 </template>
 

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production webpack --config config/index.js",
-    "start": "NODE_ENV=development webpack-dev-server --config config/index.js --open",
+    "start": "NODE_ENV=development webpack-dev-server --config config/index.js --open --watch",
     "test": "test"
   },
   "repository": {
@@ -36,6 +36,7 @@
     "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
+    "bootstrap-vue": "^2.0.0-rc.11",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1"
   }

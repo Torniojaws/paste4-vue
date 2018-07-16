@@ -14,7 +14,7 @@ const env = process.env.NODE_ENV || 'development';
 
 module.exports = {
   mode: env,
-  entry: path.join(__dirname, '../src', 'main.js'),
+  entry: { app: './src/main.js' },
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'build.js',
@@ -38,7 +38,7 @@ module.exports = {
       },
       {
         test: /\.css/,
-        use: 'css-loader'
+        use: ['vue-style-loader', 'css-loader']
       }
     ]
   },
@@ -50,21 +50,9 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      filename: path.join(__dirname, '../dist', 'index.html'),
-      template: path.join(__dirname, '..', 'index.html'),
+      filename: 'index.html',
+      template: 'index.html',
       inject: true,
     }),
-  ],
-  node: {
-    // prevent webpack from injecting useless setImmediate polyfill because Vue
-    // source contains it (although only uses it if it's native).
-    setImmediate: false,
-    // prevent webpack from injecting mocks to Node native modules
-    // that does not make sense for the client
-    dgram: 'empty',
-    fs: 'empty',
-    net: 'empty',
-    tls: 'empty',
-    child_process: 'empty'
-  }
+  ]
 };
