@@ -1,19 +1,20 @@
 <template>
+  <!-- Using the Holy Grail layout -->
   <b-container fluid>
-    <b-row>
-      <main-menu />
-    </b-row>
+
+    <!-- Menu row -->
+    <b-row><main-menu /></b-row>
+
+    <!-- Three columns for the contents -->
     <b-row>
       <b-col>Left</b-col>
-      <b-col>
-        <!-- All component contents will be rendered here -->
-        <router-view/>
-      </b-col>
+      <b-col><router-view/></b-col>
       <b-col>Right</b-col>
     </b-row>
-    <b-row>
-      <footer>Hi, I am footer</footer>
-    </b-row>
+
+    <!-- And bottom row TODO: Replace with template -->
+    <b-row><footer>Hi, I am footer</footer></b-row>
+
   </b-container>
 </template>
 
