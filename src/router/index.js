@@ -1,8 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Hello from '@/views/HelloPage';
-import About from '@/views/AboutPage';
+
+import Add from '@/views/AddPage';
+import Login from '@/views/LoginPage';
+import Marked from '@/views/MarkedPage';
 import NotFound from '@/views/NotFoundPage';
+import Pastes from '@/views/PastesPage';
 
 Vue.use(Router);
 
@@ -10,14 +13,24 @@ export default new Router({
   mode: 'history',
   routes: [
     {
-      path: '/hello',
-      name: 'Hello',
-      component: Hello,
+      path: '/',
+      name: 'Pastes',
+      component: Pastes,
     },
     {
-      path: '/about',
-      name: 'About',
-      component: About,
+      path: '/add',
+      name: 'Add',
+      component: Add,
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login,
+    },
+    {
+      path: '/marked',
+      name: 'Marked',
+      component: Marked,
     },
     {
       path: '*',

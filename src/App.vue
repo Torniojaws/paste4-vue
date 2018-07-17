@@ -7,13 +7,13 @@
 
     <!-- Three columns for the contents -->
     <b-row>
-      <b-col>Left</b-col>
-      <b-col><router-view/></b-col>
-      <b-col>Right</b-col>
+      <b-col><!-- left column --></b-col>
+      <b-col cols="8"><router-view/></b-col>
+      <b-col><!-- Right column --></b-col>
     </b-row>
 
-    <!-- And bottom row TODO: Replace with template -->
-    <b-row><footer>Hi, I am footer</footer></b-row>
+    <!-- And bottom row -->
+    <b-row><main-footer /></b-row>
 
   </b-container>
 </template>

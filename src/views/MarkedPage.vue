@@ -1,17 +1,17 @@
 <template>
-  <div id="hello">
-    <h1>Hello</h1>
-    <p>Hi there. {{ msg }}</p>
-    <b-alert show dismissible>Bootstrappi</b-alert>
+  <div id="marked">
+    <h1>Marked pastes</h1>
+    <p>Will show all {{ msg }} pastes</p>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Hello',
+  name: 'Marked',
   data () {
     return {
       msg: 'This is a test',
+      // TODO: Call the /pastes?marked=all endpoint
     }
   }
 }
