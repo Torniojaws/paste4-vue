@@ -11,6 +11,7 @@ Vue.use(Router);
 
 export default new Router({
   mode: 'history',
+  base: '/paste4/',
   routes: [
     {
       path: '/',
@@ -34,8 +35,7 @@ export default new Router({
     },
     {
       path: '*',
-      name: 'NotFound',
-      component: NotFound,
+      redirect: '/',
     }
   ]
 });

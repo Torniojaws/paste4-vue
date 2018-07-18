@@ -32,4 +32,8 @@ export default {
   font-family: Helvetica, sans-serif;
   color: black;
 }
+
+h1 {
+  color: green;
+}
 </style>

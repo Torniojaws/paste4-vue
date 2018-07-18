@@ -28,6 +28,7 @@ module.exports = {
     extensions: ['.js', '.vue'],
     alias: {
       '@': resolve('src'),
+      'vue$': 'vue/dist/vue.esm.js'
     }
   },
   module: {
@@ -53,6 +54,6 @@ module.exports = {
       filename: 'index.html',
       template: 'index.html',
       inject: true,
-    }),
+    })
   ]
 };
