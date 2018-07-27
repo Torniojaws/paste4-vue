@@ -1,6 +1,6 @@
 <template>
-  <div id="marked">
-    <h1>Marked pastes</h1>
+  <div id="all">
+    <h1>All pastes</h1>
     <b-row class="header">
       <b-col cols="2">Date</b-col>
       <b-col cols="2">Tags</b-col>
@@ -23,22 +23,22 @@
 import { HTTP } from '@/components/http-common';
 
 export default {
-  name: 'Marked',
+  name: 'All',
   data () {
     return {
       pastes: []
     }
   },
   created () {
-    this.loadMarkedPastes();
+    this.loadAllPastes();
   },
   methods: {
-    async loadMarkedPastes () {
+    async loadAllPastes () {
       try {
-        const response = await HTTP.get('pastes?marked=true');
+        const response = await HTTP.get('pastes?marked=all');
         this.pastes = response.data;
       } catch (err) {
-        console.log('Could not retrieve marked pastes!', err);
+        console.log('Could not retrieve all pastes!', err);
       }
     }
   }

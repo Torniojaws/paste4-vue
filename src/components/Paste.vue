@@ -1,6 +1,6 @@
 <template>
   <b-row>
-    <b-col cols="2">{{ date }}</b-col>
+    <b-col cols="2">{{ dateFormat(date) }}</b-col>
     <b-col cols="2">
       <span v-for="(tag, index) in tags">
         <!-- Add a comma for each, except last item -->
@@ -16,6 +16,9 @@
 </template>
 
 <script>
+import { HTTP } from '@/components/http-common';
+import formatDate from '@/components/date';
+
 export default {
   name: 'Paste',
   props: ['id', 'paste', 'date', 'tags', 'marked'],
@@ -25,15 +28,22 @@ export default {
     }
   },
   methods: {
-    toggle (event) {
+    async toggle (event) {
       event.preventDefault();
-      alert(`Gonna process id: ${this.id} which has status: ${this.markStatus}`);
-      /* TODO - once the backend is online
-      PUT /pastes/:id
-      {
-        "marked": this.markStatus === 'Unmark' ? false : true;
+      console.log(`Will mark/unmark ID: ${this.id}`);
+      try {
+        const payload = {
+          marked: this.markStatus === 'Unmark' ? false : true
+        };
+        const response = await HTTP.put(`pastes/${this.id}`, payload);
+        // To update the displayed text immediately
+        this.markStatus = this.markStatus === 'Unmark' ? 'Mark' : 'Unmark';
+      } catch (err) {
+        console.log('Failed to mark/unmark:', err);
       }
-      */
+    },
+    dateFormat (date) {
+      return formatDate(date);
     }
   }
 }
