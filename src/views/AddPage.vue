@@ -37,7 +37,7 @@ export default {
       event.preventDefault();
 
       const payload = {
-        message: this.form.paste,
+        contents: this.form.paste,
         tags: this.form.tags.split(',').map(tag => tag.trim()),
       };
       const auth = {

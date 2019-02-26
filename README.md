@@ -1,6 +1,7 @@
 # Paste 4.0 frontend
 
-Vue frontend for the Paste 4.0 tool. Trying to keep it as minimal as possible.
+Vue frontend for the Paste tool. Trying to keep it as minimal as possible.
+The API is version 5.0...
 
 ## Tools
 

@@ -4,7 +4,7 @@ const getMonthName = (num) => {
 };
 
 const formatDate = (d) => {
-  const date = new Date(d);
+  const date = new Date(parseInt(d)*1000); // Unix timestamp to milliseconds
   const year = date.getFullYear();
   const month = getMonthName(date.getMonth());
   const day = ('0' + date.getDate()).slice(-2);

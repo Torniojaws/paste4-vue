@@ -9,10 +9,10 @@
     </b-row>
     <paste-item
       v-for="paste in pastes"
-      :key="paste._id"
-      :id="paste._id"
-      :paste="paste.message"
-      :date="paste.createdAt"
+      :key="paste.date"
+      :id="paste.date"
+      :paste="paste.contents"
+      :date="paste.date"
       :marked="paste.marked"
       :tags="paste.tags"
     ></paste-item>
@@ -35,7 +35,7 @@ export default {
   methods: {
     async loadAllPastes () {
       try {
-        const response = await HTTP.get('pastes?marked=all');
+        const response = await HTTP.get('pastes');
         this.pastes = response.data;
       } catch (err) {
         console.log('Could not retrieve all pastes!', err);

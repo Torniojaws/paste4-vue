@@ -8,7 +8,7 @@
         <a :href="'tags/' + tag">{{ tag }}</a><span v-if="index+1 < tags.length">, </span>
       </span>
     </b-col>
-    <b-col cols="7" v-html="paste" v-linkified></b-col>
+    <b-col cols="7" v-linkified>{{ paste }}</b-col>
     <b-col cols="1">
       <b-button v-on:click="toggle" type="submit" variant="info">{{ markStatus }}</b-button>
     </b-col>
@@ -21,7 +21,7 @@ import formatDate from '@/components/date';
 
 export default {
   name: 'Paste',
-  props: ['id', 'paste', 'date', 'tags', 'marked'],
+  props: ['id', 'paste', 'date', 'contents', 'tags', 'marked'],
   data () {
     return {
       markStatus: this.marked ? 'Unmark' : 'Mark'
@@ -33,6 +33,8 @@ export default {
       console.log(`Will mark/unmark ID: ${this.id}`);
       try {
         const payload = {
+          contents: this.paste,
+          tags: this.tags,
           marked: this.markStatus === 'Unmark' ? false : true
         };
         const response = await HTTP.put(`pastes/${this.id}`, payload);

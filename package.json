@@ -1,7 +1,7 @@
 {
   "name": "paste4-vue",
   "version": "0.0.1",
-  "description": "Vue frontend for Paste 4.0",
+  "description": "Vue frontend for Paste 4.0 (which uses Paste 5 API...)",
   "main": "index.js",
   "scripts": {
     "build": "NODE_ENV=production webpack --config config/index.js",
